@@ -6,6 +6,7 @@ import { useObserver } from "mobx-react";
 import GitHubStats from "./GitHubCards";
 import { LightBulbIcon } from "@heroicons/react/outline";
 import FeedbackButton from "../elements/FeedbackButton";
+import Image from "next/image";
 
 export default function AboutMe({ back }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,7 +42,9 @@ export default function AboutMe({ back }) {
           </p>
           <div className="flex flex-col md:flex-row w-full">
             <div className="flex w-full md:w-6/12 justify-center items-center mb-4 md:mb-0">
-              <img
+              <Image
+               width={1500}
+               height={1500}
                 src="/happy.svg"
                 alt=""
                 className="w-8/12 aspect-square select-none pointer-events-none"

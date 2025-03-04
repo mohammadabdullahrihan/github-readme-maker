@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useGPRMStore } from "../../mobx/GPRMcontext";
+import Image from "next/image";
 
 export default function TextInputWithImage({ id, imgUrl, placeholder }) {
   const gprmStore = useGPRMStore();
   const [input, setInput] = useState(gprmStore.data.donate[id]);
   useEffect(() => {
     gprmStore.data.donate[id] = input;
-  }, [input]);
+  }, [gprmStore.data.donate, id, input]);
   return (
     <div className="flex w-full md:w-10/12 my-2">
       <input
@@ -20,7 +21,9 @@ export default function TextInputWithImage({ id, imgUrl, placeholder }) {
 
       <label htmlFor={id} className="p-5">
         <span className="sr-only"> {id} </span>
-        <img
+        <Image
+         width={1500}
+         height={1500}
           src={imgUrl}
           alt=""
           className="w-12 aspect-square bg-green-100 rounded-md p-1"

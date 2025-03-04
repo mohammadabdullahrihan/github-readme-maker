@@ -7,6 +7,7 @@ import { useObserver } from "mobx-react";
 import Socials from "./Socials";
 import FeedbackButton from "../elements/FeedbackButton";
 import themes from "../../data/themes";
+import Image from "next/image";
 
 export default function GitHubStats({ back }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -83,7 +84,9 @@ export default function GitHubStats({ back }) {
             please wait for images to load after changing any values
           </p>
           <div className="w-full md:w-8/12 justify-center flex flex-col flex-wrap md:my-4">
-            <img
+            <Image
+             width={1500}
+             height={1500}
               className="m-2 select-none pointer-events-none"
               draggable="false"
               id="stats"
@@ -92,7 +95,9 @@ export default function GitHubStats({ back }) {
               }&theme=${theme}&hide_border=${!border}&include_all_commits=${includeAll}&count_private=${includePrivate}`}
               alt=""
             />
-            <img
+            <Image
+             width={1500}
+             height={1500}
               className="m-2 select-none pointer-events-none"
               draggable="false"
               id="streak"
@@ -101,7 +106,9 @@ export default function GitHubStats({ back }) {
               }&theme=${theme}&hide_border=${!border}`}
               alt=""
             />
-            <img
+            <Image
+             width={1500}
+             height={1500}
               className="m-2 select-none pointer-events-none"
               draggable="false"
               id="langs"

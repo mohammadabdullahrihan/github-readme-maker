@@ -9,6 +9,7 @@ import { searchFilter } from "../../utils/searchFilter";
 import { SearchIcon } from "@heroicons/react/outline";
 import TechBadgesWrapper from "../techstack/TechBadgesWrapper";
 import FeedbackButton from "../elements/FeedbackButton";
+import Image from "next/image";
 
 export default function TechStack({ back }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +19,7 @@ export default function TechStack({ back }) {
   const [searchStr, setSearchStr] = useState("");
   useEffect(() => {
     gprmStore.data.badge_theme = BadgeStyle;
-  }, [BadgeStyle]);
+  }, [BadgeStyle, gprmStore.data]);
 
   // Seaching whenever searchStr is changed
   useEffect(() => {
@@ -67,7 +68,9 @@ export default function TechStack({ back }) {
                 searchStr ? "hidden" : "flex"
               } md:w-6/12 justify-center items-center`}
             >
-              <img
+              <Image
+               width={1500}
+               height={1500}
                 src="/girlonpc.svg"
                 alt=""
                 className="md:w-8/12 aspect-square select-none pointer-events-none"
@@ -154,7 +157,9 @@ export default function TechStack({ back }) {
                 Social
               </option> */}
             </select>
-            <img
+            <Image
+              width={1500}
+              height={1500}
               src={`https://img.shields.io/badge/Preview-1ED760?style=${BadgeStyle}&logo=spotify&logoColor=white`}
               alt=""
               className="w-max max-w-xs ml-4"

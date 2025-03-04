@@ -1,37 +1,14 @@
+import Image from "next/image";
 import React from "react";
 
 export default function Credits() {
   const cc = [
     {
-      avatar: "https://avatars.githubusercontent.com/u/81325730?v=4",
+      avatar: "/assets/avatars/1.jpg",
       name: "Vishwa Gaurav",
       creditfor: "Visit Count Pro",
     },
-    {
-      avatar: "https://avatars.githubusercontent.com/u/35374649?v=4",
-      name: "Anurag Hazra",
-      creditfor: "GitHub ReadMe Stats",
-    },
-    {
-      avatar: "https://avatars.githubusercontent.com/u/20955511?v=4",
-      name: "Jonah Lawrence",
-      creditfor: "GitHub ReadMe Streaks",
-    },
-    {
-      avatar: "https://avatars.githubusercontent.com/u/81325730?v=4",
-      name: "Vishwa Gaurav",
-      creditfor: "Random Memes",
-    },
-    {
-      avatar: "https://avatars.githubusercontent.com/u/6661165?v=4",
-      name: "Ryota Sakamoto",
-      creditfor: "GitHub Profile Trophies",
-    },
-    {
-      avatar: "https://avatars.githubusercontent.com/u/32237558?v=4",
-      name: "Piyush Suthar",
-      creditfor: "GitHub ReadMe Quotes",
-    },
+ 
   ];
   return (
     <div className="flex flex-col w-full items-center my-10 md:my-14 text-green-300">
@@ -48,7 +25,9 @@ export default function Credits() {
               key={index}
               className="flex flex-col items-center m-2 p-4 py-10 brightness-90 rounded-md w-56"
             >
-              <img
+              <Image
+               width={1500}
+               height={1500}
                 src={cc.avatar}
                 alt=""
                 className="rounded-full w-20 h-20 md:w-28 md:h-28"

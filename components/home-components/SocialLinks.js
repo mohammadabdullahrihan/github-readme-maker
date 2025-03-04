@@ -1,5 +1,6 @@
 import React from "react";
 import AnchorWithSVG from "../elements/anchor/AnchorWithSVG";
+import Image from "next/image";
 
 export default function SocialLinks() {
   return (
@@ -33,7 +34,9 @@ export default function SocialLinks() {
         </div>
       </div>
       <div className="w-full md:w-6/12 flex flex-col justify-center items-center">
-        <img
+        <Image
+         width={1500}
+         height={1500}
           src="/socials.svg"
           alt=""
           className="w-10/12 aspect-square select-none pointer-events-none -rotate-3"

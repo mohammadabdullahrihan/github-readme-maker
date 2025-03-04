@@ -4,6 +4,7 @@ import Pagination from "../elements/Pagination";
 import TextInputWithImage from "../elements/textinput/TextInputWithImage";
 import Extras from "./Extras";
 import FeedbackButton from "../elements/FeedbackButton";
+import Image from "next/image";
 
 export default function Donate({ back }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +57,9 @@ export default function Donate({ back }) {
           </p>
           <div className="flex flex-col md:flex-row w-full">
             <div className="flex w-full md:w-6/12 justify-center items-center">
-              <img
+              <Image
+               width={1500}
+               height={1500}
                 src="/donate.svg"
                 alt=""
                 className="w-8/12 aspect-square select-none pointer-events-none -rotate-3"

@@ -11,6 +11,7 @@ import ScrollToTop from "../elements/ScrollToTop";
 import { RIGHT_ARROW_SVG } from "../elements/SVG";
 import { useGPRMStore } from "../mobx/GPRMcontext";
 import { useObserver } from "mobx-react";
+import Image from "next/image";
 
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -71,7 +72,9 @@ export default function HomePage() {
               <AnimatedText />
             </div>
             <div className="flex w-full mt-16 md:mt-0 md:w-6/12 justify-center">
-              <img
+              <Image
+               width={1500}
+               height={1500}
                 src="/hpill.svg"
                 alt=""
                 className="w-full sm:w-8/12 aspect-square select-none pointer-events-none"

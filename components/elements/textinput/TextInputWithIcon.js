@@ -11,7 +11,7 @@ export default function TextInputWithIcon({
   const [input, setInput] = useState(gprmStore.data.socials[id]);
   useEffect(() => {
     gprmStore.data.socials[id] = input;
-  }, [input]);
+  }, [gprmStore.data.socials, id, input]);
   return (
     <div className="flex w-full md:w-5/12 my-2">
       <input

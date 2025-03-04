@@ -11,6 +11,7 @@ import { useGPRMStore } from "../mobx/GPRMcontext";
 import { useObserver } from "mobx-react";
 import FeedbackButton from "../elements/FeedbackButton";
 import themes from "../../data/themes";
+import Image from "next/image";
 
 export default function Extras({ back }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,28 +30,28 @@ export default function Extras({ back }) {
   );
   useEffect(() => {
     gprmStore.data.trophy.theme = theme;
-  }, [theme]);
+  }, [theme, gprmStore.data.trophy]);
   useEffect(() => {
     gprmStore.data.trophy.border = border;
-  }, [border]);
+  }, [border, gprmStore.data.trophy]);
   useEffect(() => {
     gprmStore.data.trophy.background = background;
-  }, [background]);
+  }, [background, gprmStore.data.trophy]);
   useEffect(() => {
     gprmStore.data.visitcount.color = color;
-  }, [color]);
+  }, [color, gprmStore.data.visitcount]);
   useEffect(() => {
     gprmStore.data.visitcount.icon = icon;
-  }, [icon]);
+  }, [icon, gprmStore.data.visitcount]);
   useEffect(() => {
     gprmStore.data.quote.quoteTheme = quoteTheme;
-  }, [quoteTheme]);
+  }, [quoteTheme, gprmStore.data.quote]);
   useEffect(() => {
     gprmStore.data.quote.layout = layout;
-  }, [layout]);
+  }, [layout, gprmStore.data.quote]);
   useEffect(() => {
     gprmStore.data.toprepo.toprepotheme = topRepoTheme;
-  }, [topRepoTheme]);
+  }, [topRepoTheme, gprmStore.data.toprepo]);
 
   function changeLayout() {
     if (layout === "horizontal") {
@@ -206,7 +207,9 @@ ${gprmStore.data.tech
             please wait for images to load after changing any values
           </p>
           <div className="w-full md:w-8/12 items-center flex flex-col flex-wrap md:my-4">
-            <img
+            <Image
+             width={1500}
+             height={1500}
               className="m-2 select-none pointer-events-none"
               draggable="false"
               id="trophy"
@@ -254,7 +257,9 @@ ${gprmStore.data.tech
             </select>
           </div>
           <a href="https://visitcount.itsvg.in" className="">
-            <img
+            <Image
+             width={1500}
+             height={1500}
               id="visitors"
               src={`https://visitcount.itsvg.in/api?id=VishwaGauravIn&pretty=true&icon=${icon}&color=${color}`}
               alt=""
@@ -303,7 +308,9 @@ ${gprmStore.data.tech
               onClick={() => changeLayout()}
             />
           </div>
-          <img
+          <Image
+           width={1500}
+           height={1500}
             className="m-2 select-none pointer-events-none"
             draggable="false"
             id="quote"
@@ -334,7 +341,9 @@ ${gprmStore.data.tech
               })}
             </select>
           </div>
-          <img
+          <Image
+           width={1500}
+           height={1500}
             className="m-2 select-none pointer-events-none"
             draggable="false"
             id="toprepo"
